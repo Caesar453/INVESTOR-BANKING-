@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investor Bank</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash">
+  <h1>Investor Bank</h1>
+</div>
+
+<div id="login">
+  <h1>Login</h1>
+  <input id="name" placeholder="Full Name">
+  <input id="pin" type="password" placeholder="PIN">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="dashboard">
+  <div class="header">
+    <h2 id="welcome">Welcome</h2>
+    <button onclick="logout()" class="logout">Logout</button>
+  </div>
+  <div class="balance-card">
+    <p>Available Balance</p>
+    <h1>₦<span id="balance">0</span></h1>
+    <div class="actions">
+      <button onclick="deposit()">+ Add Money</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+  <div class="transactions">
+    <h3>Recent Transactions</h3>
+    <div id="history"></div>
+  </div>
+  <div class="services">
+    <div class="service" onclick="showPage('profile')"><i class="fa-solid fa-user"></i><p>Profile</p></div>
+    <div class="service" onclick="showPage('finance')"><i class="fa-solid fa-chart-line"></i><p>Finance</p></div>
+    <div class="service" onclick="buyUtility('Airtime')"><i class="fa-solid fa-mobile-screen"></i><p>Airtime</p></div>
+    <div class="service" onclick="buyUtility('Data')"><i class="fa-solid fa-wifi"></i><p>Data</p></div>
+    <div class="service" onclick="buyUtility('Electricity')"><i class="fa-solid fa-bolt"></i><p>Electricity</p></div>
+    <div class="service" onclick="buyUtility('TV')"><i class="fa-solid fa-tv"></i><p>TV</p></div>
+    <div class="service" onclick="buyUtility('SafeBox')"><i class="fa-solid fa-piggy-bank"></i><p>SafeBox</p></div>
+    <div class="service" onclick="buyUtility('Rewards')"><i class="fa-solid fa-gift"></i><p>Rewards</p></div>
+  </div>
+  <div class="nav">
+    <button onclick="showPage('dashboard')"><i class="fa-solid fa-house"></i><br>Home</button>
+    <button onclick="showPage('finance')"><i class="fa-solid fa-chart-line"></i><br>Finance</button>
+    <button onclick="showPage('profile')"><i class="fa-solid fa-user"></i><br>Profile</button>
+  </div>
+</div>
+
+<div id="profile" class="page">
+  <h2>User Profile</h2>
+  <p id="profileName"></p>
+  <p>Email: example@investorbank.com</p>
+</div>
+
+<div id="finance" class="page">
+  <h2>Finance Overview</h2>
+  <canvas id="financeChart"></canvas>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
